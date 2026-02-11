@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: gcr.io/google-samples/gb-frontend:v4 # Placeholder for your Go App
+        image: nginx:latest # Placeholder for your Go App
         ports:
         - containerPort: 80
