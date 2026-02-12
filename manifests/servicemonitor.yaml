@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: go-app-monitor
+  namespace: monitoring # The Operator lives here
+  labels:
+    release: monitoring # This MUST match the release name of your helm chart
+spec:
+  selector:
+    matchLabels:
+      app: go-app # This looks for your Service's label
+  namespaceSelector:
+    matchNames:
+      - default-app # This is where your app lives
+  endpoints:
+  - port: http # This matches the name of the port in your Service
+    path: /metrics
+    interval: 15s
