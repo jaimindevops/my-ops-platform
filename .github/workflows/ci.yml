@@ -9,16 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      # 1. Build the Go App Image
-      - name: Build Docker Image
-        run: docker build -t jaimindevops/go-transaction-app:latest .
 
-      # 2. Run Trivy Scan (As shown in your SecOps diagram)
+      # 1. Build the Go App Image
+      # FIX: Changed '.' to 'cmd/app/' so it finds the Dockerfile
+      # FIX: Updated image name to match your Docker Hub (jaiminops18)
+      - name: Build Docker Image
+        run: docker build -t jaiminops18/go-app:latest cmd/app/
+
+      # 2. Run Trivy Scan
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'jaimindevops/go-transaction-app:latest'
+          # FIX: Must match the tag we just built above
+          image-ref: 'jaiminops18/go-app:latest' 
           format: 'table'
           exit-code: '1'
-          severity: 'CRITICAL,HIGH'
+          severity: 'CRITICAL,HIGH'          
