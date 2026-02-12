@@ -1,36 +1,3 @@
-# 1. Redis Database (StatefulSet)
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: redis
-  namespace: default-app
-spec:
-  serviceName: "redis"
-  replicas: 1
-  selector:
-    matchLabels:
-      app: redis
-  template:
-    metadata:
-      labels:
-        app: redis
-    spec:
-      containers:
-      - name: redis
-        image: redis:alpine
----
-# 2. Redis Service (Internal)
-apiVersion: v1
-kind: Service
-metadata:
-  name: redis-service
-  namespace: default-app
-spec:
-  selector:
-    app: redis
-  ports:
-    - port: 6379
----
 # 3. The Go App (Deployment)
 apiVersion: apps/v1
 kind: Deployment
@@ -49,7 +16,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: jaiminops18/go-app:secure-v1 # We will update this to your Go image later
+        image: jaiminops18/go-app:secure-v1 # (Or your latest tag)
         imagePullPolicy: Always
         env:
         - name: REDIS_HOST
@@ -73,4 +40,3 @@ spec:
     - name: http 
       port: 80
       targetPort: 8080
-      nodePort: 30080
