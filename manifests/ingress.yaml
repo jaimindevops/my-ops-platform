@@ -4,8 +4,8 @@ metadata:
   name: go-app-ingress
   namespace: default-app
   annotations:
+    kubernetes.io/ingress.class: "traefik"
     # Optional: Limits request rate to prevent abuse (DDoS protection)
-    traefik.ingress.kubernetes.io/router.middlewares: default-app-ratelimit@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
