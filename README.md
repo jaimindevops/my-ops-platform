@@ -76,23 +76,22 @@ Stateless apps are easy; stateful apps are hard. I built a visitor counter to pr
 
 ## 📸 Screenshots & Proof of Work
 
-### ✅ Evidence 1: Data Persistence (Visitor Count = 6)
-
-*Proof that the database survived a pod crash.*
+### ✅ Evidence 1: ArgoCD is in sync status:
+<img width="978" height="485" alt="image" src="https://github.com/user-attachments/assets/cb93b3a5-75dc-42a2-b669-f29f3cc96cf9" />
 
 ### ✅ Evidence 2: Image Optimization (94% Reduction)
-
 *Comparison between the original Alpine image and the hardened Distroless image.*
 <img width="1057" height="177" alt="image" src="https://github.com/user-attachments/assets/b392c145-3f15-4a2e-9517-aa3710562b39" />
 
-
 ### ✅ Evidence 3: AIOps Analysis
-
 *k8sgpt analyzing a broken pod and suggesting a fix.*
 <img width="507" height="335" alt="image" src="https://github.com/user-attachments/assets/aac6aba1-d69f-45a7-b186-0dbf5569d564" />
 
+### ✅ Evidence 4: Grafana Dashboard
+*On Grafana Dashboard able to view node health and query*
+<img width="970" height="513" alt="image" src="https://github.com/user-attachments/assets/d35fca82-9050-4ab8-a41f-ee869c7434fe" />
 
-### ✅ Evidence 4: Self-Healing in Action
+### ✅ Evidence 5: Self-Healing in Action
 Kubernetes automatically detecting a failed container (simulated via Chaos Mesh) and restarting it immediately to maintain availability.
 <img width="533" height="111" alt="image" src="https://github.com/user-attachments/assets/b1de30a4-e561-4058-a8df-6d24bb27080a" />
 
