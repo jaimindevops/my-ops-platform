@@ -18,7 +18,8 @@ As modern infrastructure grows complex, "keeping the lights on" requires more th
 ---
 
 ## 🏗️ Architecture
-<img width="844" height="458" alt="image" src="https://github.com/user-attachments/assets/7ea2bf6e-9040-4537-8b43-d84fd2084111" />
+<img width="809" height="459" alt="image" src="https://github.com/user-attachments/assets/ce92ed92-18b7-4ab0-8a14-65c6851a8fb8" />
+
 
 The platform runs on **Oracle Cloud Infrastructure (OCI)** using the ARM64 Ampere tier for maximum efficiency.
 
