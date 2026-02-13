@@ -1,4 +1,4 @@
-# 🧠 AIOps-K8s-Platform: Self-Healing & AI-Powered DevSecOps
+#  AIOps-K8s-Platform: Self-Healing & AI-Powered DevSecOps
 
 **A production-grade Kubernetes platform built on Oracle Cloud (OCI) that leverages Local AI for observability, Chaos Engineering for resilience, and GitOps for automated security.**
 
